@@ -141,7 +141,7 @@ if uploaded_file is not None:
         input_data.at[index, 'H'] = st.session_state[f'H_{index}']
         input_data.at[index, 'T'] = st.session_state[f'T_{index}']
         input_data.at[index, 'Unit'] = st.session_state[f'attribute_unit_{index}']
-        input_data.at[index, 'Comments'] = st.session_state[f'comments_{index}']
+        input_data.at[index, 'Comments'] = st.session_state[f'task_comment_{index}']
         input_data.at[index, '3P_Website_Link'] = st.session_state[f'third_party_link_{index}']
     
         # Save back to session state and notify the user
