@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 11 08:49:28 2024
 
-@author: santahse
-"""
 import io
 import streamlit as st
 import pandas as pd
@@ -171,8 +166,14 @@ if uploaded_file is not None:
         st.markdown(f"<div style='font-size: 14px; font-weight: bold;'>{translate_text(st.session_state.input_data['Item_name'][index])}</div>", unsafe_allow_html=True)
     
         # Extract image links for carousel display
-        image_links = st.session_state.input_data['Image_link'][index].split(',')
-    
+        image_links_raw = st.session_state.input_data['Image_link'][index]
+        
+        # Ensure image_links_raw is a string before attempting to split
+        if isinstance(image_links_raw, str) and image_links_raw.strip():
+            image_links = image_links_raw.split(',')
+        else:
+            image_links = []  # Set to an empty list if no valid image links are found
+        
         # Layout for the image carousel and ASIN info
         col_image, col_info = st.columns([1, 1])
         with col_image:
