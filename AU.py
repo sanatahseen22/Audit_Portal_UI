@@ -192,7 +192,7 @@ if uploaded_file is not None:
         # If no valid image links, display a placeholder
         else:
             st.markdown("""
-                <div style="width:300px;height:200px;display:flex;align-items:center;justify-content:center;border:1px solid #ccc;">
+                <div style="width:250px;height:150px;display:flex;align-items:center;justify-content:center;border:1px solid #ccc;">
                     <p>No images available</p>
                 </div>
             """, unsafe_allow_html=True)
