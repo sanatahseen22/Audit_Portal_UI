@@ -245,7 +245,7 @@ if uploaded_file is not None:
         input_data.at[index, 'Thickness'] = st.session_state[f'T_{index}']
         input_data.at[index, 'Units'] = st.session_state[f'attribute_unit_{index}']
         input_data.at[index, 'Comments'] = st.session_state[f'task_comment_{index}']
-        input_data.at[index, '3P_Website_Link'] = st.session_state[f'third_party_link_{index}']
+        input_data.at[index, 'Values_fetched_from_this_URL'] = st.session_state[f'third_party_link_{index}']
     
         # Save back to session state and notify the user
         st.session_state.input_data = input_data
@@ -355,7 +355,7 @@ if uploaded_file is not None:
                 st.selectbox('Task Comments', correct_comments, key=f'comments_{index}')
         
         with col_website:
-            st.text_input('3P Website Link', key=f'third_party_link_{index}')
+            st.text_input('Values_fetched_from_this_URL', key=f'third_party_link_{index}')
     
         # Submit button with validation logic
         if st.button(f'Submit Row {index+1}'):
